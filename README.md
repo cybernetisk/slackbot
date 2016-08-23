@@ -8,8 +8,13 @@ Tjenester som fungerer i dag er:
 * Få dagens fra SiO.
 * Informasjon om Jira saker
 
+Tjenester man har lyst til å få opp:
+* Tbane tider
+* Sjekke internstatus/medlemstatus
+* Legge til UiO kort i internsystemet
+
 # Setup
 For å få startet boten i dag, så må du sette 3 enviorment variabler
 * SLACK_BOT_TOKEN
 * JIRA_USER
-* JIRA_PW
+* JIRA_PASS
