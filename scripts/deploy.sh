@@ -12,9 +12,6 @@ if [ ! -z "$TRAVIS" ]; then
   ssh-add travis-key
 fi
 
-
-
-
 echo "Running remote SSH-script"
 ssh -o StrictHostKeyChecking=no root@in.cyb.no /bin/bash << EOF
   set -e
