@@ -1,11 +1,12 @@
 import os
 API_TOKEN = os.environ['SLACK_BOT_TOKEN']
-#DEFAULT_REPLY = "No idea what you are talking about"
+DEFAULT_REPLY = "Try help!"
 
 PLUGINS = [
     'slackbot.plugins',
     'slackbotjira',
-    'plugins.dagens'
+    'plugins.dagens',
+    'plugins.help'
 ]
 
 #SLACKBOTJIRA
