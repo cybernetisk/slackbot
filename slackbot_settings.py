@@ -3,7 +3,6 @@ API_TOKEN = os.environ['SLACK_BOT_TOKEN']
 DEFAULT_REPLY = "Try help!"
 
 PLUGINS = [
-    'slackbot.plugins',
     'slackbotjira',
     'plugins.dagens',
     'plugins.help'

@@ -1,5 +1,3 @@
 {
   "help": "shows this message",
-  "dagens": "gives you todays dinner in sio cafeteria. Default one is ifi, but you can choose some more",
-  "upload": "uploads the url you send it to."
-}
+  "dagens": "gives you todays dinner in sio cafeteria. Default one is ifi, but you can choose some more"
