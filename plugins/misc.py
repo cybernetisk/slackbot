@@ -6,4 +6,4 @@ from pytz import timezone
 def day(message, func=None):
     oslo = timezone('Europe/Oslo')
     now = datetime.datetime.now(tz=oslo)
-    message.reply(now.strftime('Date is %A %Y/%m/%d'))
+    message.reply(now.strftime('%A %Y/%m/%d'))
