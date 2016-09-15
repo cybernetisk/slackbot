@@ -5,7 +5,8 @@ DEFAULT_REPLY = "Try help!"
 PLUGINS = [
     'slackbotjira',
     'plugins.dagens',
-    'plugins.help'
+    'plugins.help',
+    'plugins.misc'
 ]
 
 #SLACKBOTJIRA
