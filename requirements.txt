@@ -6,6 +6,7 @@ slackbotjira==0.3.0
 beautifulsoup4>=4.5.0
 slackbot==0.4.1
 pytz==2016.6.1
+strict-rfc3339==0.7
 
 #test
 pytest==3.0.2

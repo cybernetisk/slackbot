@@ -6,7 +6,8 @@ PLUGINS = [
     'slackbotjira',
     'plugins.dagens',
     'plugins.help',
-    'plugins.misc'
+    'plugins.misc',
+    'plugins.ruter'
 ]
 
 #SLACKBOTJIRA
