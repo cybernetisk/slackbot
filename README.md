@@ -7,9 +7,10 @@ Bruker [lins5/slackbot](https://github.com/lins05/slackbot) for sende og mota in
 Tjenester som fungerer i dag er:
 * Få dagens fra SiO.
 * Informasjon om Jira saker
+* T-bane og trikke tider
+
 
 Tjenester man har lyst til å få opp:
-* Tbane tider
 * Sjekke internstatus/medlemstatus
 * Legge til UiO kort i internsystemet
 
