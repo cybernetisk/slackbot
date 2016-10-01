@@ -10,7 +10,7 @@ base_url = 'http://reisapi.ruter.no/'
 
 
 def pretty_time(time):
-    now = datetime.datetime.now()
+    now = datetime.datetime.now(tz=oslo)
     diff = time - now
     if diff.seconds < 600:
         return '%d min' % (diff.seconds / 60)
@@ -67,7 +67,7 @@ def ruter(message, name=None, transporttype=None):
                     destination = mvc['DestinationName']
                     line = mvc['PublishedLineName']
                     timestamp = mvc['MonitoredCall']['ExpectedDepartureTime']
-                    time = datetime.datetime.fromtimestamp(strict_rfc3339.rfc3339_to_timestamp(timestamp))
+                    time = datetime.datetime.fromtimestamp(strict_rfc3339.rfc3339_to_timestamp(timestamp), tz=oslo)
                     ret += ('%s %s:  %s\n' % (line, destination, pretty_time(time)))
 
     message.reply(ret)
