@@ -2,6 +2,8 @@
   "help": "shows this message",
   "dagens": "gives you todays dinner in sio cafeteria. Default one is ifi, but you can get a list of cafeterias using list as an argument  ",
   "dag": "prints the day and date. example: Thursday 2016/09/15",
-  'tbane': 'shows the next departures at stop(default is Forskningsparken)'
-  'trikk': 'shows the next departures at stop(default is Forskningsparken)'
+  "tbane": 'shows the next departures at stop(default is Forskningsparken)',
+  "trikk": 'shows the next departures at stop(default is Forskningsparken)',
+  "buss": 'shows the next departures for stop',
+
 }

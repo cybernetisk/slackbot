@@ -40,13 +40,21 @@ def tbane(message, name=None):
 def trikk(message, name=None):
     ruter(message, name=name, transporttype='tram')
 
+
+@respond_to(r'buss (.*)')
+@respond_to(r'buss')
+def buss(message, name=None):
+    if name is None:
+        ruter(message, name='Gaustad', transporttype='bus')
+    else:
+        ruter(message, name=name, transporttype='bus')
+
 def ruter(message, name=None, transporttype=None):
     ret = ''
     if name is None:
         # 3010370 is for Forskningsparken T-Bane
         stops = get_stations('Forskningsparken')
     else:
-        print(name)
         stops = get_stations(name)
 
     for stop in stops:
