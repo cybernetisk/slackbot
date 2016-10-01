@@ -33,17 +33,25 @@ def get_from_api(url, params=None):
 @respond_to(r'tbane (.*)')
 @respond_to(r'tbane$')
 def tbane(message, name=None):
+    ruter(message, name=name, transporttype='metro')
+
+@respond_to(r'trikk (.*)')
+@respond_to(r'trikk')
+def trikk(message, name=None):
+    ruter(message, name=name, transporttype='tram')
+
+def ruter(message, name=None, transporttype=None):
     ret = ''
     if name is None:
         # 3010370 is for Forskningsparken T-Bane
-        stops = ({'Name': 'Forskningsparken (T-Bane)', 'ID': 3010370, 'PlaceType': 'Stop'},)
+        stops = get_stations('Forskningsparken')
     else:
         print(name)
         stops = get_stations(name)
 
     for stop in stops:
         if stop['PlaceType'] in 'Stop':
-            departures = get_departures(stop['ID'], transporttypes='metro')[:5]
+            departures = get_departures(stop['ID'], transporttypes=transporttype)[:5]
             if len(departures) is not 0:
                 ret = ret + stop['Name'] + ':\n'
                 for departure in departures:
