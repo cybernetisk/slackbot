@@ -1,6 +1,6 @@
 # Slackbot for Cybernetisk Selskab
 
-Litens slackbot som gir diverse tjenester for CYB sin slack.
+Liten slackbot som tilbyr diverse tjenester i CYB sin slack.
 
 Bruker [lins5/slackbot](https://github.com/lins05/slackbot) for sende og mota informasjon fra Slack sitt RTM-api.
 
