@@ -13,6 +13,8 @@ Tjenester som fungerer i dag er:
 Tjenester man har lyst til å få opp:
 * Sjekke internstatus/medlemstatus
 * Legge til UiO kort i internsystemet
+* Hente arr informasjon fra internsystemet
+
 
 # Setup
 For å få startet boten i dag, så må du sette 3 enviorment variabler
