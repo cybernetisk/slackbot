@@ -22,12 +22,10 @@ def vouchers(message, username=None):
             user = get_user_from_message(message)
             username = user['name']
     wallets = get_from_api(base_url + 'voucher/wallets?user=' + username)
-    if len(wallets) is 0:
-        message.reply('There isn\'t any information for %s' % username)
     for wallet in wallets:
         if semester_is_valid(wallet['semester']):
             printed = True
             message.reply(wallet_to_string(wallet))
     if printed is False:
-        message.reply('I can\'t find a wallet for %s this semester' % username)
+        message.reply('I can\'t find a valid wallet for %s' % username)
 
