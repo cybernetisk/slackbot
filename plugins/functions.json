@@ -4,5 +4,6 @@
   "dag": "prints the day and date. example: Thursday 2016/09/15",
   "tbane": "shows the next departures at stop(default is Forskningsparken)",
   "trikk": "shows the next departures at stop(default is Forskningsparken)",
-  "buss": "shows the next departures for stop"
+  "buss": "shows the next departures for stop",
+  "vouchers": "shows how many vouchers a user got. default is yourself"
 }
