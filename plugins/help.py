@@ -6,8 +6,8 @@ def load_help_json():
         functions = json.load(f)
     return functions
 
-@respond_to(r'help$')
-@respond_to(r'help (.*)')
+@respond_to(r'^help$')
+@respond_to(r'^help (.*)')
 def help(message, helpfunction=None):
     functions = load_help_json()
     if helpfunction is None:

@@ -22,19 +22,19 @@ def pretty_time(time):
 
 
 
-@respond_to(r'tbane (.*)')
-@respond_to(r'tbane$')
+@respond_to(r'^tbane (.*)')
+@respond_to(r'^tbane$')
 def tbane(message, name=None):
     ruter(message, name=name, transporttype='metro')
 
-@respond_to(r'trikk (.*)')
-@respond_to(r'trikk')
+@respond_to(r'^trikk (.*)')
+@respond_to(r'^trikk')
 def trikk(message, name=None):
     ruter(message, name=name, transporttype='tram')
 
 
-@respond_to(r'buss (.*)')
-@respond_to(r'buss')
+@respond_to(r'^buss (.*)')
+@respond_to(r'^buss')
 def buss(message, name=None):
     if name is None:
         ruter(message, name='Gaustad', transporttype='bus')

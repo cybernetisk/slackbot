@@ -5,10 +5,10 @@ from plugins.sio import Dagens
 
 
 
-@respond_to(r'dagens$')
-@respond_to(r'dagens (.*)')
-@listen_to(r'!dagens$')
-@listen_to(r'!dagens (.*)')
+@respond_to(r'^dagens$')
+@respond_to(r'^dagens (.*)')
+@listen_to(r'^!dagens$')
+@listen_to(r'^!dagens (.*)')
 def dagens(message, cafeteria=None):
     sio = Dagens()
     if cafeteria is None:
