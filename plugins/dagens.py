@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
 from slackbot.bot import respond_to, listen_to
-from plugins.sio import Dagens
 
+from plugins.sio import Dagens
 
 
 @respond_to(r'^dagens$')

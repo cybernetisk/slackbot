@@ -1,4 +1,4 @@
-import ruter
+from plugins import ruter
 
 def test_get_station():
     name = 'Forskningsparken'

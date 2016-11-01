@@ -1,4 +1,4 @@
-from sio import Dagens
+from plugins.sio import Dagens
 
 
 def test_dagen_config():
