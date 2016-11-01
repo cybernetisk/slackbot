@@ -2,10 +2,7 @@ language: python
 python: 3.5.2
 sudo: false
 env:
-- LOCAL_SETTINGS=settings_local_travis
-- SLACK_BOT_TOKEN=dummyvalue
-- JIRA_USER=dummyvalue
-- JIRA_PASS=fummyvalue
+- LOCAL_SETTINGS=settings_local_travis SLACK_BOT_TOKEN=dummyvalue JIRA_USER=dummyvalue JIRA_PASS=fummyvalue
 install:
 - pip install -r requirements.txt
 script:
