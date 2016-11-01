@@ -7,7 +7,8 @@ PLUGINS = [
     'plugins.dagens',
     'plugins.help',
     'plugins.misc',
-    'plugins.ruter'
+    'plugins.ruter',
+    'plugins.grabber'
 ]
 
 #SLACKBOTJIRA
