@@ -6,7 +6,7 @@ from BeautifulSoup import BeautifulSoup
 
 @listen_to(r'^http.*')
 @listen_to(r'^https.*')
-def grabber(message, url):
+def grabber(message, url=None):
     soup = BeautifulSoup(urllib2.urlopen(url))
     message.reply("Title:")
     message.reply(soup.title.string)
