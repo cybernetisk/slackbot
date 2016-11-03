@@ -7,3 +7,7 @@ def day(message, func=None):
     oslo = timezone('Europe/Oslo')
     now = datetime.datetime.now(tz=oslo)
     message.reply(now.strftime('%A %Y-%m-%d'))
+
+@respond_to(r'^ping$')
+def ping(message):
+    message.reply('Pong!')
