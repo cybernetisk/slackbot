@@ -8,12 +8,12 @@ Tjenester som fungerer i dag er:
 * Få dagens fra SiO.
 * Informasjon om Jira saker
 * T-bane og trikke tider
+* Hente arr informasjon fra internsystemet
 
 
 Tjenester man har lyst til å få opp:
 * Sjekke internstatus/medlemstatus
 * Legge til UiO kort i internsystemet
-* Hente arr informasjon fra internsystemet
 
 
 # Setup
