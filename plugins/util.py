@@ -2,9 +2,15 @@ import json
 import requests
 from datetime import datetime
 from pytz import timezone
+import chardet
 
-def get_from_api(url, params=None):
+def get_from_api(url, params=None, encoding=None):
     response = requests.get(url, params=params)
+    if response.encoding is None:
+        if encoding is None:
+            response.encoding = chardet.detect(response.raw)['encoding']
+        else:
+            response.encoding = encoding
     if response.status_code is not 200:
         raise Exception('%s:%s' % (response.status_code, response.text))
     try:

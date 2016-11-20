@@ -8,8 +8,7 @@ PLUGINS = [
     'plugins.help',
     'plugins.misc',
     'plugins.ruter',
-    'plugins.in',
-    'plugins.events'
+    'plugins.in'
 ]
 
 #SLACKBOTJIRA
@@ -19,3 +18,4 @@ JIRA_PROJECTS = ['AG', 'CYBOKO', 'DRIFT', 'ESC', 'HS', 'PR' 'RAP','UT']
 
 #Event url
 EVENT_URL = 'https://in.cyb.no/api/cal/upcoming'
+INTERN_URL = 'https://in.cyb.no/api/'

@@ -1,7 +1,8 @@
-from slackbot.bot import respond_to
+from slackbot.bot import respond_to, listen_to
+from slackbot_settings import EVENT_URL
+from slackbot_settings import INTERN_URL as base_url
 from plugins.util import get_from_api, get_user_from_message, semester_is_valid
-
-base_url = 'https://in.cyb.no/api/'
+from dateutil import parser
 
 
 def semester_to_string(semester):
@@ -15,6 +16,8 @@ def wallet_to_string(wallet):
 
 @respond_to(r'^vouchers$')
 @respond_to(r'^vouchers (.*)')
+@listen_to(r'!vouchers$')
+@listen_to(r'!vouchers (.*)')
 def vouchers(message, username=None):
     printed = False
     if username is None:
@@ -29,3 +32,20 @@ def vouchers(message, username=None):
     if printed is False:
         message.reply('I can\'t find a valid wallet for %s' % username)
 
+def decode_event(events):
+    ret = ''
+    for event in events:
+        time = parser.parse(event['start'])
+        ret = ret + '%s: %s\n' %(event['summary'], time.strftime('%c'))
+    return ret
+
+@respond_to(r'^events$')
+@respond_to(r'^events (.*)')
+@listen_to(r'!events$')
+@listen_to(r'!events (.*)')
+def events(message, eventtype='extern'):
+    events = get_from_api(EVENT_URL, encoding='utf-8')
+    if eventtype == 'intern':
+        message.reply(decode_event(events['intern']))
+    else:
+        message.reply(decode_event(events['public']))
