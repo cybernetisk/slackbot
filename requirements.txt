@@ -1,5 +1,5 @@
 requests==2.12.3
-websocket-client==0.37.0
+websocket-client==0.39.0
 slacker==0.9.30
 six==1.10.0
 slackbotjira==0.3.0
