@@ -1,4 +1,4 @@
-requests==2.12.3
+requests==2.12.4
 websocket-client==0.40.0
 slacker==0.9.30
 six==1.10.0
