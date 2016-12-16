@@ -8,5 +8,7 @@
   "vouchers": "shows how many vouchers a user got. default is yourself",
   "commit": "gives you a random string to add to a commit message",
   "ping": "pong",
-  "events": "gives you upcoming events"
+  "events": "gives you upcoming events",
+  "repo": "Returns link to github repo"
+  "commit": "gives you a random commit message"
 }

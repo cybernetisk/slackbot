@@ -11,10 +11,12 @@ def load_help_json():
 def help(message, helpfunction=None):
     functions = load_help_json()
     if helpfunction is None:
-        reply = "This is the commands you can use:\n"
+        reply = "Valid commands: "
         for function, text in functions.items():
-            reply += "\t%s: %s\n" %(function, text)
+            reply += "%s " % (function)
+        reply += '\n use the help command for more information'
         message.reply(reply)
+
     elif helpfunction in functions:
         message.reply("%s:%s" %(helpfunction, functions[helpfunction]))
     else:

@@ -9,7 +9,9 @@ def day(message, func=None):
     now = datetime.datetime.now(tz=oslo)
     message.reply(now.strftime('%A %Y-%m-%d'))
 
+
 @respond_to(r'^ping$')
+@listen_to(r'^!ping$')
 def ping(message):
     message.reply('Pong!')
 
@@ -19,3 +21,8 @@ def commit(message):
     url = "http://whatthecommit.com/index.txt"
     commitmessage = requests.get(url).text
     message.reply(commitmessage)
+
+@respond_to(r'^repo$')
+@listen_to(r'^!repo$')
+def repo(message):
+    message.reply('https://github.com/cybrairai/slackbot')
