@@ -13,7 +13,7 @@ def help(message, helpfunction=None):
     if helpfunction is None:
         reply = "Valid commands: "
         for function, text in functions.items():
-            reply += "%s " % (function)
+            reply += "%s " % function
         reply += '\n use the help command for more information'
         message.reply(reply)
 
