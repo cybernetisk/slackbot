@@ -9,5 +9,5 @@
   "commit": "gives you a random string to add to a commit message",
   "ping": "pong",
   "events": "gives you upcoming events",
-  "repo": "Returns link to github repo",
+  "repo": "Returns link to github repo"
 }
