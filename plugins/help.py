@@ -1,4 +1,4 @@
-from slackbot.bot import respond_to
+from slackbot.bot import respond_to, listen_to
 import json
 
 def load_help_json():
@@ -8,6 +8,8 @@ def load_help_json():
 
 @respond_to(r'^help$')
 @respond_to(r'^help (.*)')
+@listen_to(r'^!help$')
+@listen_to(r'^!help (.*)')
 def help(message, helpfunction=None):
     functions = load_help_json()
     if helpfunction is None:
@@ -18,6 +20,6 @@ def help(message, helpfunction=None):
         message.reply(reply)
 
     elif helpfunction in functions:
-        message.reply("%s:%s" %(helpfunction, functions[helpfunction]))
+        message.reply("%s: %s" %(helpfunction, functions[helpfunction]))
     else:
         message.reply('I don\'t know that command')
