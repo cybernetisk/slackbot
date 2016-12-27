@@ -44,7 +44,7 @@ def decode_event(events):
 @listen_to(r'!events$')
 @listen_to(r'!events (.*)')
 def events(message, eventtype='extern'):
-    events = get_from_api(EVENT_URL, encoding='utf-8')
+    events = get_from_api(EVENT_URL, encoding='utf-8', cache=True)
     if eventtype == 'intern':
         message.reply(decode_event(events['intern']))
     else:

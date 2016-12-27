@@ -1,6 +1,8 @@
 import urllib
-import json, codecs, requests
+import json, codecs, requests, requests_cache
 from bs4 import BeautifulSoup
+
+
 
 
 class Dagens(object):
@@ -8,6 +10,7 @@ class Dagens(object):
         with open('plugins/cafeteria.json') as f:
             self.cafeterias = json.load(f)
         self.url = 'https://sio.no/mat-og-drikke/_window/mat+og+drikke+-+dagens+middag?s={}'
+        requests_cache.install_cache('sio', expire_after=360)
 
     def help(self):
         retstr = 'Valid cafeterias is:\n'

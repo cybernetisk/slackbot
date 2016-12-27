@@ -9,6 +9,7 @@ pytz==2016.10
 strict-rfc3339==0.7
 python-dateutil==2.6.0
 chardet==2.3.0
+requests_cache==0.4.13
 
 #test
 pytest==3.0.5
