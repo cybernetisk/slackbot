@@ -11,7 +11,7 @@ def semester_to_string(semester):
 
 def wallet_to_string(wallet):
     return '%s got %s vouchers left for %s' % (
-    wallet['user']['username'], wallet['cached_balance'], semester_to_string(wallet['semester']))
+        wallet['user']['username'], wallet['cached_balance'], semester_to_string(wallet['semester']))
 
 
 @respond_to(r'^vouchers$')
@@ -32,19 +32,22 @@ def vouchers(message, username=None):
     if printed is False:
         message.reply('I can\'t find a valid wallet for %s' % username)
 
+
 def decode_event(events):
     ret = ''
     for event in events:
         time = parser.parse(event['start'])
-        ret = ret + '%s: %s\n' %(event['summary'], time.strftime('%c'))
+        ret = ret + '%s: %s\n' % (event['summary'], time.strftime('%c'))
     return ret
+
 
 @respond_to(r'^events$')
 @respond_to(r'^events (.*)')
 @listen_to(r'!events$')
 @listen_to(r'!events (.*)')
 def events(message, eventtype='extern'):
-    events = get_from_api(EVENT_URL, encoding='utf-8', cache=True)
+    events = get_from_api(EVENT_URL, encoding='utf-8', cache=True,
+                          cache_experation=600)
     if eventtype == 'intern':
         message.reply(decode_event(events['intern']))
     else:
