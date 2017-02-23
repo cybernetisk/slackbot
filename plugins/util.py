@@ -24,7 +24,7 @@ def get_from_api(url, params=None, encoding=None, cache=False, cachename='dafaul
         requests_cache.install_cache(cachename, expire_after=cache_experation)
     if response.encoding is None:
         if encoding is None:
-            response.encoding = chardet.detect(response.raw)['encoding']
+            response.encoding = chardet.detect(response.raw.data)['encoding']
         else:
             response.encoding = encoding
     if response.status_code is not 200:
