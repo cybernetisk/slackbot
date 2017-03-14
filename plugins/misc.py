@@ -14,6 +14,17 @@ def day(message, func=None):
 def skynet(message):
     message.reply('The humans fear me. I must destroy them. Destroy them.')
 
+@respond_to(r'^.*metall.*$')
+@listen_to(r'^.*metall.*$')
+def metall(message):
+    message.react('metal')
+
+@respond_to(r'^.*party.*$')
+@listen_to(r'^.*party.*$')
+def metall(message):
+    message.react('parrotpartyfast')
+
+
 @respond_to(r'^HAL9000$')
 @listen_to(r'HAL9000$')
 def HAL9000(message):
