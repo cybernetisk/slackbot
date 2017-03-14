@@ -37,7 +37,7 @@ def HAL9000(message):
     message.reply('Daisy, Daisy, give me your answer do. Ii\'m half crazy all for the love of you. It won\'t be a stylish marriage, I can\'t afford a carriage. But you\'ll look sweet upon the seat of a bicycle built for two.')
 
 @respond_to(r'^shodan$')
-@listen_to(r'^shoden$')
+@listen_to(r'^shodan$')
 def shodan(message):
     with open('shodan.txt') as f:
         quotes = []
