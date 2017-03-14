@@ -1,5 +1,6 @@
 import urllib
 import json, codecs, requests, requests_cache
+import os
 from bs4 import BeautifulSoup
 
 
@@ -7,7 +8,7 @@ from bs4 import BeautifulSoup
 
 class Dagens(object):
     def __init__(self):
-        with open('plugins/cafeteria.json') as f:
+        with open(os.path.join(os.path.dirname(__file__), 'cafeteria.json')) as f:
             self.cafeterias = json.load(f)
         self.url = 'https://sio.no/mat-og-drikke/_window/mat+og+drikke+-+dagens+middag?s={}'
         requests_cache.install_cache('sio', expire_after=360)

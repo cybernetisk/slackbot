@@ -4,11 +4,12 @@ DEFAULT_REPLY = "Try help!"
 
 PLUGINS = [
     'slackbotjira',
-    'plugins.dagens',
+    'plugins.sio.dagens',
     'plugins.help',
     'plugins.misc',
-    'plugins.ruter',
-    'plugins.in'
+    'plugins.ruter.ruter',
+    'plugins.in',
+    'plugins.shodan.shodan'
 ]
 
 #SLACKBOTJIRA

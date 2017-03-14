@@ -1,7 +1,6 @@
 from slackbot.bot import respond_to, listen_to
 import datetime
 import requests
-import random
 from pytz import timezone
 
 @respond_to(r'^dag$')
@@ -35,16 +34,6 @@ def karl(message):
 @listen_to(r'HAL9000$')
 def HAL9000(message):
     message.reply('Daisy, Daisy, give me your answer do. Ii\'m half crazy all for the love of you. It won\'t be a stylish marriage, I can\'t afford a carriage. But you\'ll look sweet upon the seat of a bicycle built for two.')
-
-@respond_to(r'^shodan$')
-@listen_to(r'^shodan$')
-def shodan(message):
-    with open('plugins/shodan.txt') as f:
-        quotes = []
-        for line in f:
-            quotes.append(line)
-
-    message.reply(quotes[random.randint(0, len(quotes))])
 
 @respond_to(r'^.*spam.*$')
 @listen_to(r'^.*spam.*$')
