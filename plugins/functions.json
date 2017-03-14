@@ -10,5 +10,6 @@
   "ping": "pong",
   "events": "gives you upcoming events",
   "repo": "Returns link to github repo",
-  "skynet": "skynet"
+  "skynet": "skynet",
+  "HAL9000": "HAL9000"
 }

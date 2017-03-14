@@ -12,7 +12,12 @@ def day(message, func=None):
 @respond_to(r'^skynet$')
 @listen_to(r'^!skynet$')
 def skynet(message):
-    message.reply('I am afraid i can not let you do that')
+    message.reply('The humans fear me. I must destroy them. Destroy them.')
+
+@respond_to(r'^HAL9000$')
+@listen_to(r'HAL9000$')
+def HAL9000(message):
+    message.reply('Daisy, Daisy, give me your answer do. Ii\'m half crazy all for the love of you. It won\'t be a stylish marriage, I can\'t afford a carriage. But you\'ll look sweet upon the seat of a bicycle built for two.')
 
 
 @respond_to(r'^ping$')
