@@ -46,6 +46,10 @@ def shodan(message):
 
     message.reply(quotes[random.randint(0, len(quotes))])
 
+@respond_to(r'^.*spam.*$')
+@listen_to(r'^.*spam.*$')
+def spam(message):
+    message.reply('NEI!')
 
 @respond_to(r'^ping$')
 @listen_to(r'^!ping$')
