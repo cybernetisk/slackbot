@@ -24,8 +24,8 @@ def metall(message):
 def metall(message):
     message.react('parrotpartyfast')
 
-@respond_to(r'^.*Karl.*$')
-@listen_to(r'^.*Karl.*$')
+@respond_to(r'^.*karl.*$')
+@listen_to(r'^.*karl.*$')
 def karl(message):
     message.react('karl')
     message.react('machinegun')
