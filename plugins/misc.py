@@ -10,7 +10,7 @@ def day(message, func=None):
     message.reply(now.strftime('%A %Y-%m-%d'))
 
 @respond_to(r'^skynet$')
-@listen_to(r'^!skynet$')
+@listen_to(r'^skynet$')
 def skynet(message):
     message.reply('The humans fear me. I must destroy them. Destroy them.')
 
