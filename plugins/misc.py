@@ -40,11 +40,6 @@ def HAL9000(message):
 def spam(message):
     message.reply('NEI!')
 
-@respond_to(r'^.*channel.*$')
-@listen_to(r'^.*channel.*$')
-def sorry(message):
-    message.reply('sorry @matsasc :heart:')
-
 @respond_to(r'^ping$')
 @listen_to(r'^!ping$')
 def ping(message):
