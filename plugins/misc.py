@@ -14,8 +14,8 @@ def day(message, func=None):
 def skynet(message):
     message.reply('The humans fear me. I must destroy them. Destroy them.')
 
-@respond_to(r'^.*metall.*$')
-@listen_to(r'^.*metall.*$')
+@respond_to(r'^.*mettall.*$')
+@listen_to(r'^.*mettall.*$')
 def metall(message):
     message.react('metal')
 
