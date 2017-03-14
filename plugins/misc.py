@@ -44,7 +44,7 @@ def shodan(message):
         for line in f:
             quotes.append(line)
 
-    message.reply(quotes[random.randint(0, len(quotes))
+    message.reply(quotes[random.randint(0, len(quotes))])
 
 
 @respond_to(r'^ping$')
