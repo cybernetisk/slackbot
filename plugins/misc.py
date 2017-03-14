@@ -9,6 +9,11 @@ def day(message, func=None):
     now = datetime.datetime.now(tz=oslo)
     message.reply(now.strftime('%A %Y-%m-%d'))
 
+@respont_to(r'^skynet$')
+@listen_to(r'^skynet$')
+def skynet(message):
+    message.reply('I am afraid i can not let you do that')
+
 
 @respond_to(r'^ping$')
 @listen_to(r'^!ping$')
