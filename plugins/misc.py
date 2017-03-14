@@ -39,7 +39,7 @@ def HAL9000(message):
 @respond_to(r'^shodan$')
 @listen_to(r'^shodan$')
 def shodan(message):
-    with open('shodan.txt') as f:
+    with open('plugins/shodan.txt') as f:
         quotes = []
         for line in f:
             quotes.append(line)
