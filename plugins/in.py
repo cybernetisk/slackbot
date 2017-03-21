@@ -24,7 +24,7 @@ def vouchers(message, username=None):
         if 'user' in message.body:
             user = get_user_from_message(message)
             username = user['name']
-    wallets = get_from_api(base_url + 'voucher/wallets?user=' + username)
+    wallets = get_from_api(base_url + 'voucher/wallets?user=' + username, encoding='utf8')
     for wallet in wallets:
         if semester_is_valid(wallet['semester']):
             printed = True
