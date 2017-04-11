@@ -8,7 +8,7 @@ slackbot==0.4.1
 pytz==2017.2
 strict-rfc3339==0.7
 python-dateutil==2.6.0
-chardet==2.3.0
+chardet==3.0.0
 requests_cache==0.4.13
 
 #test
