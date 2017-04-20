@@ -1,6 +1,7 @@
 import urllib
 import json, codecs, requests, requests_cache
 import os
+import datetime
 from bs4 import BeautifulSoup
 
 
@@ -22,6 +23,8 @@ class Dagens(object):
     def get_dinner_cafeteria(self, cafeteria):
         if cafeteria not in self.cafeterias:
             return 'Cafeteria not found'
+        if cafeteria == 'kutt' and datetime.datetime.today().weekday() == 0:
+            cafeteria = 'vegetariske'
         html = requests.get(self.url.format(self.cafeterias[cafeteria])).text
 
         soup = BeautifulSoup(html, 'html.parser')
