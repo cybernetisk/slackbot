@@ -35,10 +35,11 @@ class Dagens(object):
         menu = ''
 
         for c, d in zip(headers, paragraphs):
-            dishes = d.find_all('span')
+            for useless in d.find_all('span', text=lambda text: not text):
+                useless.extract()
+            dishes = d
 
             for dish in dishes:
-                if dish:
                     menu += '%s: %s\n' % (c.contents[0], dish.contents[0])
 
         return menu
