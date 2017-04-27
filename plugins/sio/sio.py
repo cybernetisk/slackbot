@@ -38,7 +38,8 @@ class Dagens(object):
             dishes = d.find_all('span')
 
             for dish in dishes:
-                menu += '%s: %s\n' % (c.contents[0], dish.contents[0])
+                if dish:
+                    menu += '%s: %s\n' % (c.contents[0], dish.contents[0])
 
         return menu
 
