@@ -3,7 +3,7 @@ websocket-client==0.40.0
 slacker==0.9.42
 six==1.10.0
 slackbotjira==0.3.0
-beautifulsoup4==4.5.3
+beautifulsoup4==4.6.0
 slackbot==0.4.1
 pytz==2017.2
 strict-rfc3339==0.7
