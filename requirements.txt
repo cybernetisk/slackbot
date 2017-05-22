@@ -12,4 +12,4 @@ chardet==3.0.3
 requests_cache==0.4.13
 
 #test
-pytest==3.0.7
+pytest==3.1.0
