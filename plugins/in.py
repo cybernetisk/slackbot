@@ -37,7 +37,7 @@ def decode_event(events):
     ret = ''
     for event in events:
         time = parser.parse(event['start'])
-        ret = ret + '%s: %s\n' % (event['summary'], time.strftime('%c'))
+        ret = ret + '%s: %s\n' % (event['summary'], time.strftime('%a %d.%m kl. %H:%M'))
     return ret
 
 
