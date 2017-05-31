@@ -9,7 +9,7 @@ from slackbot.bot import respond_to, listen_to
 def day(message, func=None):
     oslo = timezone('Europe/Oslo')
     now = datetime.datetime.now(tz=oslo)
-    message.reply(now.strftime('%A %Y-%m-%d'))
+    message.reply(now.strftime('%A %d.%m.%Y'))
 
 
 @respond_to(r'^skynet$')
