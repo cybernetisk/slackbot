@@ -1,5 +1,5 @@
-requests==2.17.3
 websocket-client==0.44.0
+requests==2.18.1
 slacker==0.9.50
 six==1.10.0
 slackbotjira==0.3.0
@@ -7,7 +7,7 @@ beautifulsoup4==4.6.0
 slackbot==0.4.1
 pytz==2017.2
 strict-rfc3339==0.7
-python-dateutil==2.6.0
+python-dateutil==2.6.1
 chardet==3.0.4
 requests_cache==0.4.13
 
