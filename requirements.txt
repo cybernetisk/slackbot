@@ -4,7 +4,7 @@ slacker==0.9.50
 six==1.10.0
 slackbotjira==0.3.0
 beautifulsoup4==4.6.0
-slackbot==0.4.1
+slackbot==0.5.1
 pytz==2017.2
 strict-rfc3339==0.7
 python-dateutil==2.6.1
