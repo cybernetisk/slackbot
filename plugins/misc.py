@@ -89,6 +89,20 @@ def repo(message):
     else:
         message.replay('Nei')
 
+@respond_to(r'^.*er det kosetirdag.*$')
+@listen_to(r'^.*er det kosetirsdag.*$')
+def repo(message):
+    from datetime import date
+    import calendar
+    my_date = date.today()
+    day = calendar.day_name[my_date.weekday()]
+
+    if(day == 'Tuesday'):
+        message.reply('Ja')
+    else:
+        message.replay('Nei')
+
+
 @respond_to(r'^.*er det Mandag*.$')
 @listen_to(r'^!Mandag$')
 def repo(message):
