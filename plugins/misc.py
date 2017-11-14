@@ -76,7 +76,7 @@ def repo(message):
     message.reply('https://jira.cyb.no')
 
 
-@respond_to(r'^.*er det kosetirdag.*$')
+@respond_to(r'^!kosetirsdag$')
 @listen_to(r'^!kosetirsdag$')
 def repo(message):
     from datetime import date
@@ -103,8 +103,21 @@ def repo(message):
         message.replay('Nei')
 
 
-@respond_to(r'^.*er det Mandag*.$')
+@respond_to(r'^!Mandag$')
 @listen_to(r'^!Mandag$')
+def repo(message):
+    from datetime import date
+    import calendar
+    my_date = date.today()
+    day = calendar.day_name[my_date.weekday()]
+
+    if(day == 'Monday'):
+        message.reply('Ja')
+    else:
+        message.reply('Nei')
+
+@respond_to(r'^.*er det Mandag*.$')
+@listen_to(r'^.*er det Mandag*.$')
 def repo(message):
     from datetime import date
     import calendar
