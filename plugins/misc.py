@@ -76,7 +76,7 @@ def repo(message):
     message.reply('https://jira.cyb.no')
 
 
-@respond_to(r'^er det kosetirdag?$')
+@respond_to(r'^er det kosetirdag\?$')
 @listen_to(r'^!kosetirsdag$')
 def repo(message):
     from datetime import date
@@ -89,7 +89,7 @@ def repo(message):
     else:
         message.replay('Nei')
 
-@respond_to(r'^er det Mandag?$')
+@respond_to(r'^er det Mandag\?$')
 @listen_to(r'^!Mandag$')
 def repo(message):
     from datetime import date
