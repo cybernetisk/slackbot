@@ -100,4 +100,4 @@ def repo(message):
     if(day == 'Monday'):
         message.reply('Ja')
     else:
-        message.replay('Nei')
+        message.reply('Nei')
