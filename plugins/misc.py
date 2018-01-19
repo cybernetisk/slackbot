@@ -115,3 +115,9 @@ def repo(message):
         message.reply('Ja')
     else:
         message.reply('Nei')
+
+
+@respond_to(r'^*@channel*$')
+@listen_to(r'^*@channel*$')
+def sorryMats(message):
+    message.reply('Sorry @matsasc. Got you covered @adriah!')
