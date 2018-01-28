@@ -61,7 +61,7 @@ def commit(message):
 @respond_to(r'^repo$')
 @listen_to(r'^!repo$')
 def repo(message):
-    message.reply('https://github.com/cybrairai/slackbot')
+    message.reply('https://github.com/cybernetisk/slackbot')
 
 
 @respond_to(r'^wiki$')
