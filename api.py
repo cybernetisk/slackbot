@@ -50,9 +50,7 @@ class CybApi:
     def register_card(self, user_id, card_num):
         url = self._base_url + "api/core/cards"
         data = {"card_number": str(card_num), "user": int(user_id)}
-        print(data)
         request = self._client.post(url, data=data, verify=False)
-        print(request)
 
         if request.status_code == 201:
             return True
