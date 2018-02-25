@@ -1,0 +1,5 @@
+api_url = 'https://in.cyb.no/'
+api_username = ''
+api_password = ''
+api_client_id= ''
+api_client_secret = ''
