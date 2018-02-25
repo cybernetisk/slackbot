@@ -9,7 +9,8 @@ PLUGINS = [
     'plugins.misc',
     'plugins.ruter.ruter',
     'plugins.in',
-    'plugins.shodan.shodan'
+    'plugins.shodan.shodan',
+    'plugins.garm'
 ]
 
 #SLACKBOTJIRA
