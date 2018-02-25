@@ -11,7 +11,17 @@ from settings import api_url, api_client_id, \
 
 api = CybApi(api_username, api_password, api_client_id, api_client_secret, api_url)
 
-role_lis = {"design": 24, "arkiv": 26, "web": 23, "dj": 20, "kafefunk": 19, "barfunk": 18, "arrmester": 17, "kaffemester": 16, "skjenkemester": 15}
+role_lis = {
+        "design": 24,
+        "arkiv": 26,
+        "web": 23,
+        "dj": 20,
+        "kafefunk": 19,
+        "barfunk": 18,
+        "arrmester": 17,
+        "kaffemester": 16,
+        "skjenkemester": 15
+        }
 
 
 @respond_to(r'!garm (.*)')
