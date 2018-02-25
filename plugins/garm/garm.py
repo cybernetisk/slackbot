@@ -9,7 +9,7 @@ from api import CybApi
 from settings import api_url, api_client_id, \
                 api_client_secret, api_password, api_username
 
-api = CybApi(api_username, api_password, api_client_id, api_client_secret)
+api = CybApi(api_username, api_password, api_client_id, api_client_secret, api_url)
 
 role_lis = {"design": 24, "arkiv": 26, "web": 23, "dj": 20, "kafefunk": 19, "barfunk": 18, "arrmester": 17, "kaffemester": 16, "skjenkemester": 15}
 
@@ -89,13 +89,13 @@ def sm(message):
 @listen_to(r'!km$')
 def km(message):
     interns = api.get_km()
-    sm = ""
+    km = ""
     for i in interns:
-        if i['intern']['user']['username'] not in sm:
-            sm+=", {}".format(i['intern']['user']['username'])
-    if sm is "":
-        sm = "  nothing"
-    message.reply('{}: {}'.format("Kaffemestere", sm[2:]))
+        if i['intern']['user']['username'] not in km:
+            km+=", {}".format(i['intern']['user']['username'])
+    if km is "":
+        km = "  nothing"
+    message.reply('{}: {}'.format("Kaffemestere", km[2:]))
 
 def intern(name):
     interns = api.get_roles(name)

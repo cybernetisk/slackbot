@@ -67,3 +67,4 @@ backups/
 /config/jira-user.txt
 /config/slack-api-token.txt
 *.sqlite
+settings.py

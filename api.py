@@ -4,13 +4,13 @@ from oauthlib.oauth2 import LegacyApplicationClient
 
 
 class CybApi:
-    _base_url = "https://in.cyb.no/"
 
-    def __init__(self, username, password, client_id, client_secret):
+    def __init__(self, username, password, client_id, client_secret, url):
         self.username = username
         self.password = password
         self.client_id = client_id
         self.client_secret = client_secret
+        self._base_url = url
 
         # Get a token via the Resource Owner Password Credential Grant OAuth2 API
         oauth = OAuth2Session(client=LegacyApplicationClient(client_id=client_id))
