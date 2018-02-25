@@ -3,7 +3,7 @@ import datetime
 import requests
 from pytz import timezone
 from slackbot.bot import respond_to, listen_to
-
+from api import CybApi
 
 @respond_to(r'^dag$')
 def day(message, func=None):
@@ -33,6 +33,7 @@ def metall(message):
 @respond_to(r'^.*karl.*$')
 @listen_to(r'^.*karl.*$')
 def karl(message):
+    message.reply("karl?")
     message.react('karl')
     message.react('machinegun')
 
@@ -76,7 +77,7 @@ def repo(message):
     message.reply('https://jira.cyb.no')
 
 
-@respond_to(r'^.*er det kosetirdag.*$')
+@respond_to(r'^!kosetirdag$')
 @listen_to(r'^!kosetirsdag$')
 def repo(message):
     from datetime import date
@@ -87,7 +88,8 @@ def repo(message):
     if(day == 'Tuesday'):
         message.reply('Ja')
     else:
-        message.replay('Nei')
+        message.reply('Nei')
+
 
 @respond_to(r'^.*er det kosetirdag.*$')
 @listen_to(r'^.*er det kosetirsdag.*$')
@@ -100,11 +102,25 @@ def repo(message):
     if(day == 'Tuesday'):
         message.reply('Ja')
     else:
-        message.replay('Nei')
+        message.reply('Nei')
 
 
-@respond_to(r'^.*er det Mandag*.$')
-@listen_to(r'^!Mandag$')
+@respond_to(r'^.*er det mandag.*$')
+@listen_to(r'^.*er det mandag.*$')
+def repo(message):
+    from datetime import date
+    import calendar
+    my_date = date.today()
+    day = calendar.day_name[my_date.weekday()]
+
+    if(day == 'Tuesday'):
+        message.reply('Ja')
+    else:
+        message.reply('Nei')
+
+
+@respond_to(r'^!mandag$')
+@listen_to(r'^!mandag$')
 def repo(message):
     from datetime import date
     import calendar
@@ -115,3 +131,4 @@ def repo(message):
         message.reply('Ja')
     else:
         message.reply('Nei')
+
