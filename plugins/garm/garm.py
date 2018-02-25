@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import datetime
-#include <.h>
 
 import requests
 from pytz import timezone
