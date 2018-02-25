@@ -24,6 +24,7 @@ role_lis = {
         }
 
 
+@respond_to(r'garm (.*)')
 @respond_to(r'!garm (.*)')
 @listen_to(r'!garm (.*)')
 def garm(message, what=None):
