@@ -13,7 +13,7 @@ if [ ! -z "$TRAVIS" ]; then
 fi
 
 echo "Running remote SSH-script"
-ssh -o StrictHostKeyChecking=no root@in.cyb.no /bin/bash << EOF
+ssh -o StrictHostKeyChecking=no root@slackbot.cyb.no /bin/bash << EOF
   set -e
   cd ~/drift/slackbot
   ./update.sh
