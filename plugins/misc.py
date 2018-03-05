@@ -33,7 +33,6 @@ def metall(message):
 @respond_to(r'^.*karl.*$')
 @listen_to(r'^.*karl.*$')
 def karl(message):
-    message.reply("karl?")
     message.react('karl')
     message.react('machinegun')
 
