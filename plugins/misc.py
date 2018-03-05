@@ -12,12 +12,6 @@ def day(message, func=None):
     message.reply(now.strftime('%A %d.%m.%Y'))
 
 
-@respond_to(r'^skynet$')
-@listen_to(r'^skynet$')
-def skynet(message):
-    message.reply('The humans fear me. I must destroy them. Destroy them.')
-
-
 @respond_to(r'^.*mettall.*$')
 @listen_to(r'^.*mettall.*$')
 def metall(message):
@@ -72,62 +66,38 @@ def wiki_link(message):
 
 @respond_to(r'^jira$')
 @listen_to(r'^!jira$')
-def repo(message):
+def jira(message):
     message.reply('https://jira.cyb.no')
-
-
-@respond_to(r'^!kosetirdag$')
-@listen_to(r'^!kosetirsdag$')
-def repo(message):
-    from datetime import date
-    import calendar
-    my_date = date.today()
-    day = calendar.day_name[my_date.weekday()]
-
-    if(day == 'Tuesday'):
-        message.reply('Ja')
-    else:
-        message.reply('Nei')
 
 
 @respond_to(r'^.*er det kosetirdag.*$')
 @listen_to(r'^.*er det kosetirsdag.*$')
-def repo(message):
+@respond_to(r'^!kosetirdag$')
+@listen_to(r'^!kosetirsdag$')
+def social_tuesday(message):
     from datetime import date
     import calendar
     my_date = date.today()
     day = calendar.day_name[my_date.weekday()]
 
     if(day == 'Tuesday'):
-        message.reply('Ja')
+        message.reply('Ja, det _burde_ være kosetirsdag i dag.')
     else:
-        message.reply('Nei')
+        message.reply('Nei, det er tross alt ikke tirsdag.')
 
 
 @respond_to(r'^.*er det mandag.*$')
 @listen_to(r'^.*er det mandag.*$')
-def repo(message):
-    from datetime import date
-    import calendar
-    my_date = date.today()
-    day = calendar.day_name[my_date.weekday()]
-
-    if(day == 'Tuesday'):
-        message.reply('Ja')
-    else:
-        message.reply('Nei')
-
-
 @respond_to(r'^!mandag$')
 @listen_to(r'^!mandag$')
-def repo(message):
+def monday(message):
     from datetime import date
     import calendar
     my_date = date.today()
     day = calendar.day_name[my_date.weekday()]
 
     if(day == 'Monday'):
-        message.reply('Ja')
+        message.reply('Ja, men du skal vel ikke bort til RF?')
     else:
-        message.reply('Nei')
+        message.reply('Nei, enda godt.')
 
