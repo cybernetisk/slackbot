@@ -3,19 +3,13 @@ import datetime
 import requests
 from pytz import timezone
 from slackbot.bot import respond_to, listen_to
-
+from api import CybApi
 
 @respond_to(r'^dag$')
 def day(message, func=None):
     oslo = timezone('Europe/Oslo')
     now = datetime.datetime.now(tz=oslo)
     message.reply(now.strftime('%A %d.%m.%Y'))
-
-
-@respond_to(r'^skynet$')
-@listen_to(r'^skynet$')
-def skynet(message):
-    message.reply('The humans fear me. I must destroy them. Destroy them.')
 
 
 @respond_to(r'^.*mettall.*$')
@@ -61,7 +55,7 @@ def commit(message):
 @respond_to(r'^repo$')
 @listen_to(r'^!repo$')
 def repo(message):
-    message.reply('https://github.com/cybrairai/slackbot')
+    message.reply('https://github.com/cybernetisk/slackbot')
 
 
 @respond_to(r'^wiki$')
@@ -72,10 +66,11 @@ def wiki_link(message):
 
 @respond_to(r'^jira$')
 @listen_to(r'^!jira$')
-def repo(message):
+def jira(message):
     message.reply('https://jira.cyb.no')
 
 
+<<<<<<< HEAD
 @respond_to(r'^!kosetirsdag$')
 @listen_to(r'^!kosetirsdag$')
 def repo(message):
@@ -89,31 +84,44 @@ def repo(message):
     else:
         message.replay('Nei')
 
+=======
+>>>>>>> 5722881e8d53cc8722c4e8aa7214d23eb875ab81
 @respond_to(r'^.*er det kosetirdag.*$')
 @listen_to(r'^.*er det kosetirsdag.*$')
-def repo(message):
+@respond_to(r'^!kosetirdag$')
+@listen_to(r'^!kosetirsdag$')
+def social_tuesday(message):
     from datetime import date
     import calendar
     my_date = date.today()
     day = calendar.day_name[my_date.weekday()]
 
     if(day == 'Tuesday'):
-        message.reply('Ja')
+        message.reply('Ja, det _burde_ være kosetirsdag i dag.')
     else:
-        message.replay('Nei')
+        message.reply('Nei, det er tross alt ikke tirsdag.')
 
 
+<<<<<<< HEAD
 @respond_to(r'^!Mandag$')
 @listen_to(r'^!Mandag$')
 def repo(message):
+=======
+@respond_to(r'^.*er det mandag.*$')
+@listen_to(r'^.*er det mandag.*$')
+@respond_to(r'^!mandag$')
+@listen_to(r'^!mandag$')
+def monday(message):
+>>>>>>> 5722881e8d53cc8722c4e8aa7214d23eb875ab81
     from datetime import date
     import calendar
     my_date = date.today()
     day = calendar.day_name[my_date.weekday()]
 
     if(day == 'Monday'):
-        message.reply('Ja')
+        message.reply('Ja, men du skal vel ikke bort til RF?')
     else:
+<<<<<<< HEAD
         message.reply('Nei')
 
 @respond_to(r'^.*er det Mandag*.$')
@@ -128,3 +136,7 @@ def repo(message):
         message.reply('Ja')
     else:
         message.reply('Nei')
+=======
+        message.reply('Nei, enda godt.')
+
+>>>>>>> 5722881e8d53cc8722c4e8aa7214d23eb875ab81
