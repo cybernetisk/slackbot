@@ -13,6 +13,8 @@ def dagens(message, cafeteria=None):
     sio = Dagens()
     if cafeteria is None:
         message.reply(sio.get_dinner_from_sio())
+    elif cafeteria == 'dana':
+        message.reply("Børek. Varme 1337?")
     elif cafeteria == 'list':
         message.reply(sio.help())
         return

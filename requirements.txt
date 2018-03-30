@@ -7,9 +7,9 @@ beautifulsoup4==4.6.0
 slackbot==0.5.1
 pytz==2018.3
 strict-rfc3339==0.7
-python-dateutil==2.6.1
+python-dateutil==2.7.2
 chardet==3.0.4
 requests_cache==0.4.13
 
 #test
-pytest==3.4.1
+pytest==3.5.0
