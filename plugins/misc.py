@@ -1,7 +1,7 @@
 import calendar
 
 import requests
-from date import datetime
+from datetime import date
 from pytz import timezone
 from slackbot.bot import respond_to, listen_to
 
