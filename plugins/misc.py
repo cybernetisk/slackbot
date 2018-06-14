@@ -1,9 +1,10 @@
-import datetime
+import calendar
 
 import requests
+from datetime import date
 from pytz import timezone
 from slackbot.bot import respond_to, listen_to
-from api import CybApi
+
 
 @respond_to(r'^dag$')
 def day(message, func=None):
@@ -61,7 +62,7 @@ def repo(message):
 @respond_to(r'^wiki$')
 @listen_to(r'^!wiki$')
 def wiki_link(message):
-    message.reply('https://confluence.cyb.no')
+    message.reply('https://wiki.cyb.no')
 
 
 @respond_to(r'^jira$')
@@ -70,29 +71,11 @@ def jira(message):
     message.reply('https://jira.cyb.no')
 
 
-<<<<<<< HEAD
-@respond_to(r'^!kosetirsdag$')
-@listen_to(r'^!kosetirsdag$')
-def repo(message):
-    from datetime import date
-    import calendar
-    my_date = date.today()
-    day = calendar.day_name[my_date.weekday()]
-
-    if(day == 'Tuesday'):
-        message.reply('Ja')
-    else:
-        message.replay('Nei')
-
-=======
->>>>>>> 5722881e8d53cc8722c4e8aa7214d23eb875ab81
 @respond_to(r'^.*er det kosetirdag.*$')
 @listen_to(r'^.*er det kosetirsdag.*$')
 @respond_to(r'^!kosetirdag$')
 @listen_to(r'^!kosetirsdag$')
 def social_tuesday(message):
-    from datetime import date
-    import calendar
     my_date = date.today()
     day = calendar.day_name[my_date.weekday()]
 
@@ -102,41 +85,16 @@ def social_tuesday(message):
         message.reply('Nei, det er tross alt ikke tirsdag.')
 
 
-<<<<<<< HEAD
-@respond_to(r'^!Mandag$')
-@listen_to(r'^!Mandag$')
-def repo(message):
-=======
+
 @respond_to(r'^.*er det mandag.*$')
 @listen_to(r'^.*er det mandag.*$')
 @respond_to(r'^!mandag$')
 @listen_to(r'^!mandag$')
 def monday(message):
->>>>>>> 5722881e8d53cc8722c4e8aa7214d23eb875ab81
-    from datetime import date
-    import calendar
-    my_date = date.today()
+    my_date = datetime.date.today()
     day = calendar.day_name[my_date.weekday()]
 
     if(day == 'Monday'):
         message.reply('Ja, men du skal vel ikke bort til RF?')
     else:
-<<<<<<< HEAD
-        message.reply('Nei')
-
-@respond_to(r'^.*er det Mandag*.$')
-@listen_to(r'^.*er det Mandag*.$')
-def repo(message):
-    from datetime import date
-    import calendar
-    my_date = date.today()
-    day = calendar.day_name[my_date.weekday()]
-
-    if(day == 'Monday'):
-        message.reply('Ja')
-    else:
-        message.reply('Nei')
-=======
         message.reply('Nei, enda godt.')
-
->>>>>>> 5722881e8d53cc8722c4e8aa7214d23eb875ab81
