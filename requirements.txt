@@ -1,11 +1,11 @@
-websocket-client==0.47.0
+websocket-client==0.48.0
 requests==2.18.4
 slacker==0.9.65
 six==1.11.0
 slackbotjira==0.3.0
 beautifulsoup4==4.6.0
-slackbot==0.5.1
-pytz==2018.3
+slackbot==0.5.3
+pytz==2018.4
 strict-rfc3339==0.7
 python-dateutil==2.7.3
 chardet==3.0.4
