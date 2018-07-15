@@ -1,7 +1,3 @@
-websocket-client==0.48.0
-requests==2.19.1
-slacker==0.9.65
-six==1.11.0
 slackbotjira==0.3.0
 beautifulsoup4==4.6.0
 slackbot==0.5.3
