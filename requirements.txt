@@ -1,5 +1,5 @@
 slackbotjira==0.3.0
-beautifulsoup4==4.6.0
+beautifulsoup4==4.6.3
 slackbot==0.5.3
 pytz==2018.5
 strict-rfc3339==0.7
