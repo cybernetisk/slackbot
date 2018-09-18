@@ -31,6 +31,10 @@ def karl(message):
     message.react('karl')
     message.react('machinegun')
 
+@listen_to(r'^!nøkkel$')
+def nokkel(message):
+    message.reply('@lee har du sett de?')
+
 
 @respond_to(r'^HAL9000$')
 @listen_to(r'HAL9000$')
