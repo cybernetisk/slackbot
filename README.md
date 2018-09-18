@@ -10,11 +10,7 @@ Tjenester som fungerer i dag er:
 * T-bane og trikke tider
 * Hente arr informasjon fra internsystemet
 
-
-Tjenester man har lyst til å få opp:
-* Sjekke internstatus/medlemstatus
-* Legge til UiO kort i internsystemet
-
+Se [våre Github issues](https://github.com/cybernetisk/slackbot/issues) for ting vi ønsker oss, og gode første issues som du kan hjelpe med. :-)
 
 # Setup
 For å få startet boten i dag, så må du sette 3 enviorment variabler
