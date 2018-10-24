@@ -1,5 +1,15 @@
 {
   "extends": [
     "config:base"
+  ],
+  "packageRules": [
+    {
+      "groupName": "pytest",
+      "packagePatterns": [
+        "^pytest$"
+      ],
+      "automerge": true,
+      "automergeType": "branch"
+    }
   ]
 }
