@@ -46,5 +46,5 @@ class Dagens(object):
 
     def get_dinner_from_sio(self, cafeteria=None):
         if cafeteria is None:
-            return self.get_dinner_cafeteria('informatikk')
+            return self.get_dinner_cafeteria('ole-johan')
         return self.get_dinner_cafeteria(cafeteria)
