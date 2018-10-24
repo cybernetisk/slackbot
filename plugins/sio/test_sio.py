@@ -7,7 +7,3 @@ def test_dagen_config():
 def test_dagens_config2():
     d = Dagens()
     assert d.get_dinner_cafeteria('ifi') != 'Cafeteria not found'
-
-def test_dagens_dagens():
-    d = Dagens()
-    assert d.get_dinner_cafeteria('ifi').find("dagens" and "pris")
