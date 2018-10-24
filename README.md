@@ -2,7 +2,7 @@
 
 Liten slackbot som tilbyr diverse tjenester i CYB sin slack.
 
-Bruker [lins5/slackbot](https://github.com/lins05/slackbot) for sende og mota informasjon fra Slack sitt RTM-api.
+Bruker [lins5/slackbot](https://github.com/lins05/slackbot) for sende og motta informasjon fra Slack sitt RTM-api.
 
 Tjenester som fungerer i dag er:
 * Få dagens fra SiO.
