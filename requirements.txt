@@ -3,7 +3,7 @@ beautifulsoup4==4.6.3
 slackbot==0.5.3
 pytz==2018.6
 strict-rfc3339==0.7
-python-dateutil==2.7.3
+python-dateutil==2.7.4
 chardet==3.0.4
 requests_cache==0.4.13
 
