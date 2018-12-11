@@ -31,9 +31,15 @@ def karl(message):
     message.react('karl')
     message.react('machinegun')
 
+
 @listen_to(r'^!nøkkel$')
 def nokkel(message):
     message.reply('@lee har du sett de?')
+
+
+@listen_to(r'^!kaffe$')
+def kaffe(message):
+    message.reply('Function not implemented yet :parrotcoffee:')
 
 
 @respond_to(r'^HAL9000$')
