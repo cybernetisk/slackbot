@@ -11,7 +11,7 @@ from plugins.sio.sio import Dagens
 @listen_to(r'^!dagens (.*)')
 def dagens(message, cafeteria=None):
     sio = Dagens()
-    if cafeteria is None:
+    if not cafeteria:
         message.reply(sio.get_dinner_from_sio())
     elif cafeteria == 'dana':
         message.reply("Børek. Varme 1337?")
