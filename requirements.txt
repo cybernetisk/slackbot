@@ -1,7 +1,7 @@
 git+git://github.com/ebob9/slackbotjira.git@1d4b35e#egg=slackbotjira
 beautifulsoup4==4.7.1
 slackbot==0.5.3
-pytz==2018.9
+pytz==2019.1
 strict-rfc3339==0.7
 python-dateutil==2.8.0
 chardet==3.0.4
