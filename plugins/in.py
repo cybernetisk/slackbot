@@ -16,8 +16,20 @@ def wallet_to_string(wallet):
 
 @respond_to(r'^vouchers$')
 @respond_to(r'^vouchers (.*)')
+@respond_to(r'^bong$')
+@respond_to(r'^bong (.*)')
+@respond_to(r'^bongs$')
+@respond_to(r'^bongs (.*)')
+@respond_to(r'^bonger$')
+@respond_to(r'^bonger (.*)')
 @listen_to(r'!vouchers$')
 @listen_to(r'!vouchers (.*)')
+@listen_to(r'!bong$')
+@listen_to(r'!bong (.*)')
+@listen_to(r'!bongs$')
+@listen_to(r'!bongs (.*)')
+@listen_to(r'!bonger$')
+@listen_to(r'!bonger (.*)')
 def vouchers(message, username=None):
     printed = False
     if username is None:

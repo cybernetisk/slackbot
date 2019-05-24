@@ -1,7 +1,7 @@
 import calendar
 
 import requests
-from datetime import date
+from datetime import date, datetime
 from pytz import timezone
 from slackbot.bot import respond_to, listen_to
 
@@ -9,7 +9,7 @@ from slackbot.bot import respond_to, listen_to
 @respond_to(r'^dag$')
 def day(message, func=None):
     oslo = timezone('Europe/Oslo')
-    now = datetime.datetime.now(tz=oslo)
+    now = datetime.now(tz=oslo)
     message.reply(now.strftime('%A %d.%m.%Y'))
 
 
