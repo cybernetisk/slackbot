@@ -19,6 +19,12 @@ def metall(message):
     message.react('metal')
 
 
+@respond_to(r'^.*partiboi.*$')
+@listen_to(r'^.*partiboi.*$')
+def metall(message):
+    message.react('partiboi')
+
+
 @respond_to(r'^.*party.*$')
 @listen_to(r'^.*party.*$')
 def metall(message):
