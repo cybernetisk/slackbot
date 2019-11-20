@@ -2,13 +2,22 @@ from slackbot.bot import respond_to, listen_to
 import json
 import requests
 import datetime
-import strict_rfc3339
+from strict_rfc3339 import rfc3339_to_timestamp
 from pytz import timezone
 from plugins.util import get_from_api
 
 oslo = timezone('Europe/Oslo')
-base_url = 'http://reisapi.ruter.no/'
+base_url = 'https://api.entur.io/'
 
+entur_headers = {
+    'ET-Client-Name': 'cybernetisk_selskab - internsystem',
+    'Access-Control-Allow-Methods': 'GET, POST'
+}
+
+def entur_timestamp_to_strict_rfc3339(timestamp):
+    timestamp_list = list(timestamp)
+    timestamp_list.insert(-2, ':')
+    return ''.join(timestamp_list)
 
 def pretty_time(time):
     now = datetime.datetime.now(tz=oslo)
@@ -39,8 +48,8 @@ def trikk(message, name=None):
 
 @respond_to(r'^buss (.*)')
 @respond_to(r'^buss')
-@listen_to(r'^"!buss (.*)')
-@listen_to(r'^"!buss')
+@listen_to(r'^!buss (.*)')
+@listen_to(r'^!buss')
 def buss(message, name=None):
     if name is None:
         ruter(message, name='Gaustad', transporttype='bus')
@@ -56,27 +65,56 @@ def ruter(message, name=None, transporttype=None):
         stops = get_stations(name)
 
     for stop in stops:
-        if stop['PlaceType'] in 'Stop':
-            departures = get_departures(stop['ID'], transporttypes=transporttype)[:5]
-            if len(departures) is not 0:
-                ret = ret + stop['Name'] + ':\n'
-                for departure in departures:
-                    mvc = departure['MonitoredVehicleJourney']
-                    destination = mvc['DestinationName']
-                    line = mvc['PublishedLineName']
-                    timestamp = mvc['MonitoredCall']['ExpectedDepartureTime']
-                    time = datetime.datetime.fromtimestamp(strict_rfc3339.rfc3339_to_timestamp(timestamp), tz=oslo)
-                    ret += ('%s %s:  %s\n' % (line, destination, pretty_time(time)))
+        if stop['properties']['county'] == 'Oslo':
+            stopPlace = get_departures(stop['properties']['id'].split(':')[-1])['data']['stopPlace']
+            if stopPlace:
+                departures = [
+                    departure for departure in stopPlace['estimatedCalls'] 
+                    if departure['serviceJourney']['journeyPattern']['line']['transportMode'] == transporttype
+                ]
+
+                if len(departures) is not 0:
+                    ret = ret + stop['properties']['name'] + ':\n'
+                    for departure in departures:
+                        destination = departure['destinationDisplay']['frontText']
+                        line = departure['serviceJourney']['journeyPattern']['line']['id'].split(':')[-1]
+                        timestamp = entur_timestamp_to_strict_rfc3339(departure['expectedDepartureTime'])
+                        time = datetime.datetime.fromtimestamp(rfc3339_to_timestamp(timestamp), tz=oslo)
+                        ret += ('%s %s:  %s\n' % (line, destination, pretty_time(time)))
+                    ret += '\n'
 
     message.reply(ret)
 
 
 def get_stations(name):
-    return get_from_api(base_url + 'Place/GetPlaces/' + name)
+    stations_url = base_url + 'geocoder/v1/autocomplete?text={}&lang=no'
+    return requests.get(stations_url.format(name)).json()['features']
 
 
-def get_departures(stop_id, datetime=None, transporttypes=None, linenames=None):
-    params = dict()
-    if transporttypes is not None:
-        params['transporttypes'] = transporttypes
-    return get_from_api(base_url + 'StopVisit/GetDepartures/' + str(stop_id), params=params)
+def get_departures(stop_id, datetime=None, linenames=None):
+    journey_url = base_url + 'journey-planner/v2/graphql'
+
+    query = """
+        {
+            stopPlace(id: "NSR:StopPlace:%s") {
+                id
+                name
+                estimatedCalls(timeRange: 72100, numberOfDepartures: 10) {     
+                    expectedDepartureTime
+                    destinationDisplay {
+                        frontText
+                    }
+                    serviceJourney {
+                        journeyPattern {
+                            line {
+                                id
+                                transportMode
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    """ % stop_id
+    
+    return requests.post(journey_url, json={'query': query}, headers=entur_headers).json()
