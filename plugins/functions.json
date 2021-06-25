@@ -5,6 +5,7 @@
   "tbane": "shows the next departures at stop(default is Forskningsparken)",
   "trikk": "shows the next departures at stop(default is Forskningsparken)",
   "buss": "shows the next departures for stop",
+  "bursdag": "shows cyb's birthday",
   "vouchers": "shows how many vouchers a user got. default is yourself",
   "commit": "gives you a random string to add to a commit message",
   "ping": "pong",

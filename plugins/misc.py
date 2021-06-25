@@ -86,6 +86,11 @@ def wiki_link(message):
 def jira(message):
     message.reply('https://jira.cyb.no')
 
+@respond_to(r'^bursdag$')
+@listen_to(r'^!bursdag$')
+def bursdag(message):
+    message.reply('17. Februar! :beer: :tada:')
+
 
 @respond_to(r'^.*er det kosetirdag.*$')
 @listen_to(r'^.*er det kosetirsdag.*$')
@@ -99,7 +104,6 @@ def social_tuesday(message):
         message.reply('Ja, det _burde_ være kosetirsdag i dag.')
     else:
         message.reply('Nei, det er tross alt ikke tirsdag.')
-
 
 
 @respond_to(r'^.*er det mandag.*$')
